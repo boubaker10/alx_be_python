@@ -7,14 +7,12 @@ def display_menu():
 
 
 def main():
-    # shopping_list must be a list
     shopping_list = []
 
     while True:
-        # call display_menu each loop
         display_menu()
 
-        # choice must be taken as a NUMBER (int)
+        # Choice must be input as a number
         try:
             choice = int(input("Enter your choice: "))
         except ValueError:
@@ -22,22 +20,22 @@ def main():
             continue
 
         if choice == 1:
-            # Add item
-            item = input("Enter item to add: ").strip()
+            # Prompt for and add an item
+            item = input("Enter the item to add: ").strip()
             shopping_list.append(item)
-            print(f"'{item}' has been added.")
+            print(f"'{item}' has been added to the shopping list.")
 
         elif choice == 2:
-            # Remove item
-            item = input("Enter item to remove: ").strip()
+            # Prompt for and remove an item
+            item = input("Enter the item to remove: ").strip()
             if item in shopping_list:
                 shopping_list.remove(item)
-                print(f"'{item}' has been removed.")
+                print(f"'{item}' has been removed from the shopping list.")
             else:
-                print("Item not found in list.")
+                print("Item not found in the shopping list.")
 
         elif choice == 3:
-            # View list
+            # Display the shopping list
             if not shopping_list:
                 print("The shopping list is empty.")
             else:
